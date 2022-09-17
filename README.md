@@ -38,4 +38,4 @@ ssh someinternalhost
 
 ##VPN Connect configuration
 bastion_IP = 51.250.94.202
-someinternalhost = 10.128.0.35
+someinternalhost_IP = 10.128.0.35
