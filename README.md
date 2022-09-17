@@ -1,7 +1,7 @@
 # SantikaS_infra
 SantikaS Infra repository
 
-##Connection to one command: ssh -i ~/.ssh/appuser -A appuser@51.250.82.44 -p 2222
+##Connection to one command: ssh -i ~/.ssh/appuser -A appuser@51.250.94.202 -p 2222
 ##On bastion host:
 ##Turn on ipv4_forwarding
 sudo nano /etc/sysctl.conf
@@ -21,13 +21,13 @@ sudo iptables -t nat -L
 
 ##On local host:
 ##Checking:
-ssh -i ~/.ssh/appuser -A appuser@51.250.82.44 -p 2222
+ssh -i ~/.ssh/appuser -A appuser@51.250.94.202 -p 2222
 
 ##Connection by alias someinternalhost
 nano ~/.ssh/config
 ##Add to file
 Host someinternalhost
-    HostName 51.250.82.44
+    HostName 51.250.94.202
     User appuser
     IdentityFIle ~/.ssh/appuser
     Port 2222
