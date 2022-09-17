@@ -34,3 +34,8 @@ Host someinternalhost
 
 ##Checking
 ssh someinternalhost
+
+
+##VPN Connect configuration
+bastion_IP = 51.250.94.202
+someinternalhost = 10.128.0.35
