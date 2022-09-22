@@ -39,3 +39,11 @@ ssh someinternalhost
 ##VPN Connect configuration
 bastion_IP = 51.250.94.202
 someinternalhost_IP = 10.128.0.35
+
+##DZ N4
+testapp_IP = 178.154.207.23
+testapp_port = 9292
+
+##Add script startup.sh and metadata.yaml
+##Run script
+bash startup.sh
