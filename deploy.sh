@@ -4,3 +4,4 @@ cd reddit
 boundle install
 puma -d
 ps aux | grep puma
+#
