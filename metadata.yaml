@@ -1,0 +1,33 @@
+#cloude-config
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+apt:
+  preserve_sources_list: true
+
+users:
+  - default
+  - name: yc-user
+    groups: sudo
+	shell: /bin/bash
+	sudo: ['ALL=(ALL) NOPASSWD:ALL']
+	ssh-authorized-keys:
+	  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrkR3dvQkJanMuvmpGWdwr/TbOoTgEDtvuKwxgwnoMDlIK90LvV8soNGvKOQwiRzvetMh6dmYDL9eaenxUYS3HOTqSHYMLHQgcuLWliDMVPJnPmhqW0vkKSm+ShXubWKxkCyHbbIrazlI/yXaEzpMILl1LRHkmF1ATKz9i4FGkBbya+GKFAEDGC0wm31BeTt1SLSCH03ZPzXXmsFPlAY8qfwQR+35VqMg+Ijfv5EJg0TEIe1auyKvWmo1kVAJdg9g/xnda4x8uSm4nuxzgd7VYIMBOM0+UyI6jJRlaTwO1g2sbjftLwH+FSYmUSqEVP5pSpOkO7mNqYrwzyP4eHHypKJ47u5HASo0+GsG8dO/LCdbAsyaNAX6zUqmYhsMFedAAxRZsfqS8k+/hYZnDI2um+uad/NAY+LVkYef9H742ZzI3q5KeDOb7777MZOgbaLhK9JPwVrdmK9J7D0XUZ3ZdufNbWq2HZXashNR2ggoo2R02Qfdhsf3dmQoMcgGsM3U=
+
+runcmd:
+  #Install ruby
+  - [apt-get, update]
+  - [apt-get, install, -y, ruby-full, ruby-bundler, build-essential]
+  #Install mongodb
+  - [wget, -qO, -, https://www.mongodb.org/static/pgp/server-4.2.asc, |, sudo, apt-key, add, --]
+  - [echo, "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse", |, sudo, tee, /etc/apt/sources.list.d/mongodb-org-4.2.list]
+  - [apt-get, update]
+  - [apt-get, install, -y, mongodb-org]
+  - [systemctl, start, mongod]
+  - [systemctl, enable, mongod]
+  #Deploy
+  - [git, clone, -b, monolith, https://github.com/express42/reddit.git]
+  - [cd, reddit]
+  - [boundle, install]
+  - [puma, -d]
