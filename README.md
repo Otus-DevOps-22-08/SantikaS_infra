@@ -47,3 +47,13 @@ testapp_port = 9292
 ##Add script startup.sh and metadata.yaml
 ##Run script
 bash startup.sh
+
+
+##DZ N5
+http://84.201.167.175:9292/
+## Create image VM with Packer
+## Create script ubuntu 16.json
+## Create script variables.json with add to .gitignore
+## Create script variable.json.examples
+## Create script immutable.json
+## Create script create-reddit-vm.sh
