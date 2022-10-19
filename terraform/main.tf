@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     yandex = {
-      source = var.yandex
+      source = "yandex"
     }
   }
   required_version = ">= 0.13"
