@@ -57,3 +57,17 @@ http://84.201.167.175:9292/
 ## Create script variable.json.examples
 ## Create script immutable.json
 ## Create script create-reddit-vm.sh
+
+##DZ N6
+##ip APP:
+http://51.250.84.123:9292/
+##ip balancer:
+http://51.250.89.147:8080/
+## Create directory terraform
+## Create file main.tf
+## Create outputs.tf
+## Create script files/deploy.sh
+## Create variables.tf
+## Create terraform.tfvars
+## Create terraform.tfvars.example
+## Create lb.tf **
