@@ -2,6 +2,10 @@ variable "zone" {
   type = string
 }
 
+variable "yandex" {
+  type = string
+}
+
 variable "zone_app" {
   type = string
 }
