@@ -1,0 +1,204 @@
+{
+  "version": 4,
+  "terraform_version": "1.3.2",
+  "serial": 118,
+  "lineage": "fc7e14dc-ba36-1852-2fe8-01622a7b90ef",
+  "outputs": {
+    "external_ip_address_app": {
+      "value": "51.250.95.21",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "yandex_compute_instance",
+      "name": "app",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_recreate": null,
+            "allow_stopping_for_update": null,
+            "boot_disk": [
+              {
+                "auto_delete": true,
+                "device_name": "fhmq4ea5ktf2379mq22l",
+                "disk_id": "fhmq4ea5ktf2379mq22l",
+                "initialize_params": [
+                  {
+                    "block_size": 4096,
+                    "description": "",
+                    "image_id": "fd82t5k1lbh1pgjspfu9",
+                    "name": "",
+                    "size": 10,
+                    "snapshot_id": "",
+                    "type": "network-hdd"
+                  }
+                ],
+                "mode": "READ_WRITE"
+              }
+            ],
+            "created_at": "2022-10-18T19:03:31Z",
+            "description": "",
+            "folder_id": "b1go6n4v0euub81ni9rf",
+            "fqdn": "fhmaq4eng5gti94kjko4.auto.internal",
+            "hostname": "",
+            "id": "fhmaq4eng5gti94kjko4",
+            "labels": null,
+            "local_disk": [],
+            "metadata": {
+              "user-data": "#cloud-config\nusers:\n  - name: ubuntu\n    groups: sudo\n    shell: /bin/bash\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']\n    ssh_authorized_keys:\n      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDANW1nJ3SCqkTvQbMLPQW9mtaERVWSMbrVOfY1rrS/mdCwjIMbHuTvlA6ZxKxN8J5m2zUMhJj/2CsZwN6ybkv/HG3MRG+X4B9nX9JWQJNbgaYONEV1sWBCVP3ZS8MU7LcUzO2rh/Uga1G2uURjfASgLP3QfAQCvyjAl1ubY7SawVymD/WWRFuSceDcbDWev51gUmGkIt/E4JoXnQknVzZDJFde/Tia4TT9MKmmLfbbK49khDCsRfslLxdP+spzKGCfhbuM2Lm0TQ811Ry/dktyw/+XQz6IW5H8K8AwzvEkihTZe15aKbtP3nUDINgwr17id5DzfWyJAYCFvcscGyYbTOxca+PXIB+Wdm9KGblg+ZGF3h60iQBfvj9JiMsvy1Gj1JB4J+DrftvsZ9BDsRX6/In2F8lOVWzxIPmCeVMzbtgz8xPcVcIhTUe105gmkw2sPXvJ15GiLid0A9/rxBZqOCpNZJX1X6L3Aa1hFvagPjEUDD+GRK0g3pug7MnMlK8=\n"
+            },
+            "name": "reddit-app",
+            "network_acceleration_type": "standard",
+            "network_interface": [
+              {
+                "dns_record": [],
+                "index": 0,
+                "ip_address": "10.128.0.20",
+                "ipv4": true,
+                "ipv6": false,
+                "ipv6_address": "",
+                "ipv6_dns_record": [],
+                "mac_address": "d0:0d:ad:11:d7:81",
+                "nat": true,
+                "nat_dns_record": [],
+                "nat_ip_address": "51.250.95.21",
+                "nat_ip_version": "IPV4",
+                "security_group_ids": [],
+                "subnet_id": "e9bsqk1mvcnvvqi8l4eq"
+              }
+            ],
+            "placement_policy": [
+              {
+                "host_affinity_rules": [],
+                "placement_group_id": ""
+              }
+            ],
+            "platform_id": "standard-v1",
+            "resources": [
+              {
+                "core_fraction": 100,
+                "cores": 2,
+                "gpus": 0,
+                "memory": 2
+              }
+            ],
+            "scheduling_policy": [
+              {
+                "preemptible": false
+              }
+            ],
+            "secondary_disk": [],
+            "service_account_id": "",
+            "status": "running",
+            "timeouts": null,
+            "zone": "ru-central1-a"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "yandex_lb_network_load_balancer",
+      "name": "app",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "attached_target_group": [
+              {
+                "healthcheck": [
+                  {
+                    "healthy_threshold": 2,
+                    "http_options": [
+                      {
+                        "path": "/",
+                        "port": 9292
+                      }
+                    ],
+                    "interval": 2,
+                    "name": "hc-60973-ff5",
+                    "tcp_options": [],
+                    "timeout": 1,
+                    "unhealthy_threshold": 2
+                  }
+                ],
+                "target_group_id": "enpn1hfb2nbi995046g8"
+              }
+            ],
+            "created_at": "2022-10-18T19:10:52Z",
+            "description": "",
+            "folder_id": "b1go6n4v0euub81ni9rf",
+            "id": "enpjci1vtebdb1erurtv",
+            "labels": {},
+            "listener": [
+              {
+                "external_address_spec": [
+                  {
+                    "address": "51.250.82.12",
+                    "ip_version": "ipv4"
+                  }
+                ],
+                "internal_address_spec": [],
+                "name": "app-listener",
+                "port": 8080,
+                "protocol": "tcp",
+                "target_port": 9292
+              }
+            ],
+            "name": "app-network-load-balancer",
+            "region_id": "ru-central1",
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            },
+            "type": "external"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "yandex_lb_target_group",
+      "name": "app",
+      "provider": "provider[\"registry.terraform.io/yandex-cloud/yandex\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2022-10-18T19:07:33Z",
+            "description": "",
+            "folder_id": "b1go6n4v0euub81ni9rf",
+            "id": "enpn1hfb2nbi995046g8",
+            "labels": {},
+            "name": "app-target-group",
+            "region_id": "ru-central1",
+            "target": [
+              {
+                "address": "10.128.0.20",
+                "subnet_id": "e9bsqk1mvcnvvqi8l4eq"
+              }
+            ],
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            }
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
