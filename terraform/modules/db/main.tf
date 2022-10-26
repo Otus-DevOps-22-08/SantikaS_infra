@@ -39,7 +39,7 @@ resource "yandex_compute_instance" "db" {
     host  = yandex_compute_instance.db.network_interface[0].nat_ip_address
     user  = "ubuntu"
     agent = false
-    private_key = file(var.private_key_path)
+    private_key = file(var.private_key)
   }
 
   provisioner "file" {
