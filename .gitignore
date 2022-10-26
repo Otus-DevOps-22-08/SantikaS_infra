@@ -5,3 +5,5 @@ variables.json
 *.tfvars
 .terraform/
 terraform/secret/key.json
+terraform/stage/terraform.tfvars
+terraform/prod/terraform.tfvars

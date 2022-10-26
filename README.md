@@ -71,3 +71,12 @@ http://51.250.89.147:8080/
 ## Create terraform.tfvars
 ## Create terraform.tfvars.example
 ## Create lb.tf **
+
+##DZ Т7
+## URL APP:
+http://84.201.174.58:9292
+## Create modules app, db, vpc
+## Create stage & prod
+## Create backend.tf
+## Add provisioners to modules
+## Correct DATABASE_URL
