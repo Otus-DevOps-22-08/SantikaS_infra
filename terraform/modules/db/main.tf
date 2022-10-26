@@ -43,7 +43,7 @@ resource "yandex_compute_instance" "db" {
   }
 
   provisioner "file" {
-    content     = templatefile("${path.module}/files/mongod.conf", { db_ipaddr = yandex_compute_instance.db.network_interface.0.ip_address})
+    content     = templatefile("${path.module}/mongod.conf", { db_ipaddr = yandex_compute_instance.db.network_interface.0.ip_address})
     destination = "/tmp/mongod.conf"
   }
   provisioner "remote-exec" {
