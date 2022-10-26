@@ -28,6 +28,7 @@ module "db" {
   public_key_path = var.public_key_path
   db_disk_image   = var.db_disk_image
   subnet_id       = module.vpc.yandex_vpc_subnet_app-subnet
+  private_key      = var.private_key
 }
 
 module "vpc" {
