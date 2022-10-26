@@ -9,3 +9,6 @@
   description = "Subnets for modules"
 
 }
+variable private_key {
+  description = "Path to the privat key used for ssh access"
+}
