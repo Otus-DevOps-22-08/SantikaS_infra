@@ -1,4 +1,6 @@
 #!/bin/bash
+yc compute instances list --format yaml | grep -A1 "created_at" | grep "name" | sed 's/name: //g' | sed 's/^[ ]*//g' > hostsnames.txt
+yc compute instances list --format yaml | grep -A1 "one_to_one_nat" | grep "address" | sed 's/address: //g' | sed 's/^[ ]*//g' > hosts.txt
 hostsnames=($(yc compute instances list --format yaml | grep -A1 "created_at" | grep "name" | sed 's/name: //g' | sed 's/^[ ]*//g'))
 hosts=($(yc compute instances list --format yaml | grep -A1 "one_to_one_nat" | grep "address" | sed 's/address: //g' | sed 's/^[ ]*//g'))
 if [ "$1" == "--list" ]; then
@@ -38,3 +40,5 @@ elif [ "$1" == "--host" ]; then
 else
   echo "{ }"
 fi
+rm hosts.txt
+rm hostsnames.txt
