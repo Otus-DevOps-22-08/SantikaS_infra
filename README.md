@@ -80,3 +80,13 @@ http://84.201.174.58:9292
 ## Create backend.tf
 ## Add provisioners to modules
 ## Correct DATABASE_URL
+
+##DZ N8
+## Create inventory file
+## Create ansible.cfg
+## Change inventory
+## Create inventory.yml
+## Create playbook clone.yml
+## Create inventory.json *
+## Change ansible.cfg
+## Create inventory.sh

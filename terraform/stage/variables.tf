@@ -54,3 +54,11 @@ variable "db_disk_image" {
 variable "public_key_path" {
   type = string
 }
+
+
+variable "access_key" {
+  type = string
+}
+variable "secret_key" {
+  type = string
+}
