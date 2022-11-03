@@ -40,5 +40,5 @@ elif [ "$1" == "--host" ]; then
 else
   echo "{ }"
 fi
-rm hosts.txt
-rm hostsnames.txt
+#rm hosts.txt
+#rm hostsnames.txt
