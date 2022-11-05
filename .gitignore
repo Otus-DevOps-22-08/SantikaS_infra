@@ -4,6 +4,9 @@ variables.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+ansibleold/
 terraform/secret/key.json
 terraform/stage/terraform.tfvars
 terraform/prod/terraform.tfvars
+del.sh
+put.sh
