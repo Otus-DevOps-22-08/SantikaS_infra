@@ -1,13 +1,3 @@
-#terraform {
-#  required_providers {
-#    yandex = {
-#      source = "yandex-cloud/yandex"
-#    }
-#  }
-#  required_version = ">= 0.13"
-#}
-
-
 resource "yandex_compute_instance" "app" {
   name = "reddit-app"
 
@@ -44,14 +34,14 @@ resource "yandex_compute_instance" "app" {
     # путь до приватного ключа
     private_key = file(var.private_key)
   }
-  provisioner "file" {
-    #source      = "../files/puma.service"
-    content     = templatefile("../files/puma.service", { DATABASE_URL = var.db_url})
-    destination = "/tmp/puma.service"
-  }
+#  provisioner "file" {
+#    #source      = "../files/puma.service"
+#    content     = templatefile("../files/puma.service", { DATABASE_URL = var.db_url})
+#    destination = "/tmp/puma.service"
+#  }
 
-  provisioner "remote-exec" {
-    script = "../files/deploy.sh"
-  }
+#  provisioner "remote-exec" {
+#    script = "../files/deploy.sh"
+#  }
 
 }

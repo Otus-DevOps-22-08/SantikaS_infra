@@ -90,3 +90,21 @@ http://84.201.174.58:9292
 ## Create inventory.json *
 ## Change ansible.cfg
 ## Create inventory.sh
+
+##DZ N9
+## Create ansible/reddit_app.yml
+## Fix ansible/reddit_app.yml
+## Create directory ansible/templates
+## Create file ansible/templates/mongod.conf.j2
+## Create file ansible/templates/db.config.j2
+## Create ansible/reddit_app2.yml
+## Move ansible/reddit_app.yml to ansible/reddit_app_one_play.yml
+## Move ansible/reddit_app2.yml to ansible/reddit_app_multiple_plays.yml
+## Create ansible/app.yml
+## Create ansible/db.yml
+## Create ansible/deploy.yml
+## Create ansible/site.yml
+## Create ansible/packer_app.yml
+## Create ansible/packer_db.yml
+## Fix packer/app.json
+## Fix packer/db.json
