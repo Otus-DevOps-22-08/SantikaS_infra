@@ -10,3 +10,7 @@ terraform/stage/terraform.tfvars
 terraform/prod/terraform.tfvars
 del.sh
 put.sh
+terraform/headon.sh
+terraform/headoff.sh
+*.old
+*.retry
