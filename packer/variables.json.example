@@ -1,6 +1,6 @@
 {
 
-    "yc_service_account_key_file": "path_to_my_secret_key",
+    "yc_service_account_key_file": "key.json",
     "yc_folder_id": "my_id_folder",
     "yc_source_image_family": "ubuntu-1604-lts",
     "yc_image_name": "reddit-base-{{timestamp}}",

@@ -5,6 +5,7 @@ variables.json
 *.tfvars
 .terraform/
 ansibleold/
+ansiblenew/
 terraform/secret/key.json
 terraform/stage/terraform.tfvars
 terraform/prod/terraform.tfvars
@@ -14,3 +15,5 @@ terraform/headon.sh
 terraform/headoff.sh
 *.old
 *.retry
+jdauphant.nginx
+ansible/vault.key
