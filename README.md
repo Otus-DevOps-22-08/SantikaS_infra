@@ -108,3 +108,12 @@ http://84.201.174.58:9292
 ## Create ansible/packer_db.yml
 ## Fix packer/app.json
 ## Fix packer/db.json
+
+##DZ N10
+## Add roles app & db
+## Add tasks app & db
+## Add directory templates && files
+## Add directory hendlers && files
+## Add directory environments && files
+## Add directory playbooks && move files
+## Add vault.key
