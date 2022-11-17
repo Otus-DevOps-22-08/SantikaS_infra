@@ -1,0 +1,7 @@
+---
+- name: install ruby
+  hosts: all
+  become: true
+
+  roles:
+    - app

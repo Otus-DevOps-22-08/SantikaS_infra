@@ -1,0 +1,7 @@
+---
+- name: Install MongoDB 4.2
+  hosts: all
+  become: true
+
+  roles:
+    - db
