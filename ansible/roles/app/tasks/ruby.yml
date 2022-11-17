@@ -1,12 +1,3 @@
----
-- name: Install Ruby && Bundler
-  hosts: all
-  become: true
-  tasks:
-
-  - name: Wait to unblock dpkg
-    shell: sleep 30
-
 # Установим в цикле все зависимости
   - name: Install ruby and rubygems and required packages
     apt: "name={{ item }} state=present"

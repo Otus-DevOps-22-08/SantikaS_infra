@@ -1,12 +1,8 @@
 ---
-- name: Install MongoDB 3.2
-  hosts: all
-  become: true
-  tasks:
-  - name: Wait to unblock dpkg
-    shell: sleep 30
+
   - name: install https and certs pkgs to be able to add key
     apt:
+      update_cache: yes
       name:
         - apt-transport-https
         - ca-certificates

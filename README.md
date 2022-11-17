@@ -117,3 +117,16 @@ http://84.201.174.58:9292
 ## Add directory environments && files
 ## Add directory playbooks && move files
 ## Add vault.key
+
+##DZ N11
+##Install VirtualBox @ Vagrant
+##Add Vagrantfile
+##Add config_mongo.yml
+##Fix db/tasks/main.yml
+##Fix app/tasks/ruby.yml
+##Fix app/tasks/puma.yml
+##Fix ansible/playbooks/deploy.yml
+##Install Molecule, Testinfra, Virtualenv
+##Fix ansible/requirements.txt
+##Add db/molecule/default/tests/test_default.py
+##Fix db/molecule/default/molecule.yml

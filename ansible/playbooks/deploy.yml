@@ -1,32 +1,21 @@
 ---
 - name: Deploy App
   hosts: app
+  vars:
+    deploy_user: ubuntu
+
   tasks:
-    - name: Install git
-      become: true
-      apt:
-        name: git
-        state: present
-
-    - name: Install ruby and rubygems and required packages
-      become: true
-      apt: "name={{ item }} state=present"
-      with_items:
-        - ruby-full
-        - ruby-bundler
-        - build-essential
-
     - name: Fetch the latest version of application code
       git:
         repo: 'https://github.com/express42/reddit.git'
-        dest: /home/ubuntu/reddit
+        dest: /home/{{ deploy_user }}/reddit
         version: monolith
       notify: restart puma
 
     - name: bundle install
       bundler:
         state: present
-        chdir: /home/ubuntu/reddit
+        chdir: /home/{{ deploy_user }}/reddit
 
   handlers:
   - name: restart puma
