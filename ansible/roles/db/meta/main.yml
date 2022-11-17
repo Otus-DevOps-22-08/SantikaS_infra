@@ -2,7 +2,8 @@ galaxy_info:
   author: your name
   description: your role description
   company: your company (optional)
-
+  role_name: db  # if absent directory name hosting role is used instead
+  namespace: default  # if absent, author is used instead
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker

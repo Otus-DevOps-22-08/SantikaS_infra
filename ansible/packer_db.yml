@@ -3,21 +3,34 @@
   hosts: all
   become: true
   tasks:
+  - name: Wait to unblock dpkg
+    shell: sleep 30
+  - name: install https and certs pkgs to be able to add key
+    apt:
+      name:
+        - apt-transport-https
+        - ca-certificates
+      update_cache: yes
+      state: present
+
   # Добавим ключ репозитория для последующей работы с ним
   - name: Add APT key
     apt_key:
-      id: EA312927
-      keyserver: keyserver.ubuntu.com
+      #id: EA312927
+      #keyserver: keyserver.ubuntu.com
+      url: https://www.mongodb.org/static/pgp/server-4.2.asc
+      state: present
 
   # Подключаем репозиторий с пакетами mongodb
   - name: Add APT repository
     apt_repository:
-      repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+      repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
       state: present
 
   # Выполним установку пакета
   - name: Install mongodb package
     apt:
+      update_cache: yes
       name: mongodb-org
       state: present
 

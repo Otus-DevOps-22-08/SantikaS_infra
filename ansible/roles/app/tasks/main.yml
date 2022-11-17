@@ -3,30 +3,6 @@
 - name: Show info about the env this host belongs to, roles/app/tasks/main.yml
   debug:
     msg: "This host is in {{ env }} environment!!!"
-- name: install ruby
-  apt:
-    name:
-      - ruby-full
-      - ruby-bundler
-      - build-essential
-    update_cache: yes
-    state: present
-  tags: [ruby]
 
-- name: Add config for DB connection
-  template:
-    src: db_config.j2
-    dest: /home/ubuntu/db_config
-    owner: ubuntu
-    group: ubuntu
-
-- name: Add unit file for Puma
-  template:
-    src: puma.service.j2
-    dest: /etc/systemd/system/puma.service
-    owner: root
-    group: root
-  notify: reload puma
-
-- name: enable puma
-  systemd: name=puma enabled=yes
+- include: ruby.yml
+- include: puma.yml
