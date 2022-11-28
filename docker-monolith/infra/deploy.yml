@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: Container present
+    community.docker.docker_container:
+      name: reddit
+      state: started
+      image: santikas/otus-reddit:1.0
+      ports:
+       # Publish container port 9000 as host port 8080
+       - "9292:9292"
+      #command: sleep infinity

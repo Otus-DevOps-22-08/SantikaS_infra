@@ -130,3 +130,13 @@ http://84.201.174.58:9292
 ##Fix ansible/requirements.txt
 ##Add db/molecule/default/tests/test_default.py
 ##Fix db/molecule/default/molecule.yml
+
+##DZ N12-13
+##Install Docker
+##Install Docker-machine
+##Create Dockerfile
+##Register on Docker Hub
+##Create directory docker-monolith/infra
+##Create files head.tf,main.tf,variables.tf
+##Create docker.yml,deploy.yml,site.yml,ansible.cfg
+##Create variables.json,create-docker-reddit-vm.sh
