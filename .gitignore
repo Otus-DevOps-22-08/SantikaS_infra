@@ -24,3 +24,6 @@ ansible/vault.key
 .cache
 .pytest_cache
 ansible/venv/
+docker-monolith/secret/key.json
+packer/secrets/key.json
+docker-monolith/infra/vault.key
